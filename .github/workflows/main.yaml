@@ -11,6 +11,10 @@ jobs:
     steps: # список шагов, которые надо выполнить
       # checkout — клонирует репозиторий
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
       # run – произвольная bash-команда
       - run: make setup
       - run: make test
